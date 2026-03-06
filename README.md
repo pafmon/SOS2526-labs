@@ -1,1 +1,1 @@
-# SOS2526-labs - L05
+# SOS2526-labs - L06
