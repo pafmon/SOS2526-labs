@@ -33,7 +33,7 @@ export function loadBackend(app) {
       } else {
 
         db.insert(newContact);
-        res.sendStatus(201, "CREATED");
+        res.sendStatus(400, "CREATED");
       }
     });
 
