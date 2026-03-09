@@ -1,6 +1,7 @@
 import dataStore from 'nedb';
 
 let BASE_URL_API = "/api/v1";
+let DOCS_URL = "https://documenter.getpostman.com/view/359472/2sBXcLfGtG";
 
 let db = new dataStore();
 
@@ -62,7 +63,13 @@ export function loadBackend(app) {
     });
 
 
+
+
   });
 
+  app.get(BASE_URL_API + "/contacts/docs", (req, res) => {
+    console.log("Getting DOCS");
+    res.redirect(DOCS_URL);
+  });
 
 }
