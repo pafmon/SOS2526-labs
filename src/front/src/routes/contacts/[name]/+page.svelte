@@ -65,7 +65,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>updatedName</td>      
+      <td>{updatedName}</td>      
       <td><input bind:value={updatedPhone}/></td>      
       <td> <Button color="primary" onclick={updateContact}>Update</Button> </td>
     </tr>
