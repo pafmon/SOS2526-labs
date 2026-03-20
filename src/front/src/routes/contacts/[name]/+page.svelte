@@ -72,6 +72,7 @@
   </tbody>
 </Table>
 
+
 {#if resultStatusCode != 0}
 <h5>StatusCode of Operation: {resultStatusCode}</h5>
 {/if}
