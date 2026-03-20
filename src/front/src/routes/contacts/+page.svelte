@@ -3,6 +3,7 @@
 
   import { dev } from '$app/environment';
   import { onMount } from 'svelte';
+  import { Button, Table } from '@sveltestrap/sveltestrap';
  
   let API = '/api/v1/contacts';
 
@@ -66,7 +67,7 @@
 
 <p>Contacts</p>
 
-<table>
+<Table>
   <thead>
       <tr>
         <th>Name</th>
@@ -79,18 +80,18 @@
     <tr>
       <td><input bind:value={newName}/></td>      
       <td><input bind:value={newPhone}/></td>      
-      <td> <button onclick={insertContact}>Insert</button> </td>
+      <td> <Button color="primary" onclick={insertContact}>Insert</Button> </td>
       
     </tr>
   {#each contacts as contact (contact.name)}
     <tr>
       <td><a href="contacts/{contact.name}">{contact.name}</a></td>
       <td>{contact.phone}</td>
-      <td> <button onclick={() => deleteContact(contact.name)}>Delete</button> </td>
+      <td> <Button color="danger" onclick={() => deleteContact(contact.name)}>Delete</Button> </td>
     </tr>
   {/each}
   </tbody>
-</table>
+</Table>
 
 {#if resultStatusCode != 0}
 <h5>StatusCode of Operation: {resultStatusCode}</h5>

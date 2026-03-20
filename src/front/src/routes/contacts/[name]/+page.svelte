@@ -2,9 +2,10 @@
   import {page} from '$app/state';
   import { dev } from '$app/environment';
   import { onMount } from 'svelte';
+  import { Button, Table } from '@sveltestrap/sveltestrap';
+ 
   let name = page.params.name;
 
-  
   let API = '/api/v1/contacts';
 
   if(dev)
@@ -53,7 +54,7 @@
 
 <p>Contact Detail: {name}</p>
 
-<table>
+<Table>
   <thead>
       <tr>
         <th>Name</th>
@@ -64,12 +65,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><input bind:value={updatedName}/></td>      
+      <td>updatedName</td>      
       <td><input bind:value={updatedPhone}/></td>      
-      <td> <button onclick={updateContact}>Update</button> </td>
+      <td> <Button color="primary" onclick={updateContact}>Update</Button> </td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 {#if resultStatusCode != 0}
 <h5>StatusCode of Operation: {resultStatusCode}</h5>
