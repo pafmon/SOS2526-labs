@@ -2,19 +2,24 @@
   // @ts-ignore
   let contacts = $state([]);
   import { dev } from '$app/environment';
-
+  import { onMount } from 'svelte';
+ 
   let API = '/api/v1/contacts';
 
   if(dev)
     API = "http://localhost:3000"+API;
 
-async function getContacts(){
-  const res = await fetch(API,{
-    method : "GET"
+  async function getContacts(){
+    const res = await fetch(API,{
+      method : "GET"
+    });
+    const data = await res.json();
+    contacts  = data;
+  }
+
+  onMount(async () => {
+    getContacts();
   });
-  const data = await res.json();
-  contacts  = data;
-}
 
 </script>
 
