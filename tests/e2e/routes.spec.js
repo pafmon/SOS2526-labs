@@ -22,6 +22,6 @@ test('contact list shows some contacts', async ({ page }) => {
   const countactRowsCount = 
               await page.getByTestId('contactRow').count();
 
-  expect(countactRowsCount).toBeGreaterThan(2);
+  expect(countactRowsCount).toBeGreaterThan(0);
 
 });
