@@ -34,7 +34,9 @@
     "svelte": "^5.54.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@sveltejs/adapter-node": "^5.5.4",
+    "@types/node": "^25.5.0",
     "start-server-and-test": "^2.1.5"
   }
 }
