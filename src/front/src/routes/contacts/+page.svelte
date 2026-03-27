@@ -65,6 +65,10 @@
 
 </script>
 
+<svelte:head>
+  <title>Contact List</title>
+</svelte:head>
+
 <p>Contacts</p>
 
 <Table>
@@ -84,7 +88,7 @@
       
     </tr>
   {#each contacts as contact (contact.name)}
-    <tr>
+    <tr data-testid="contactRow">
       <td><a href="contacts/{contact.name}">{contact.name}</a></td>
       <td>{contact.phone}</td>
       <td> <Button color="danger" onclick={() => deleteContact(contact.name)}>Delete</Button> </td>
