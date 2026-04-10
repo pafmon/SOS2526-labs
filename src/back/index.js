@@ -128,4 +128,21 @@ export function loadBackend(app) {
     res.redirect(DOCS_URL);
   });
 
+
+  app.get(BASE_URL_API + "/data", (req, res) => {
+    console.log("Generating random data");
+
+    function getRandomInt(min,max){
+      return Math.floor((Math.random()*(max-min))+min);
+    }
+  
+    let data = [];
+
+    for (let i=0; i<10;i++)
+      data.push(getRandomInt(1,100))
+
+    res.json(data);
+  });
+
+
 }
